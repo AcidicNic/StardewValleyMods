@@ -35,13 +35,13 @@ namespace acidicNic.MonsterSlayerAnywhere {
             // keybind title
             configMenu.AddSectionTitle(
                 mod: this.ModManifest,
-                text: () => "KeyBind Settings"
+                text: () => "Назначення клавіш"
             );
             // activate key config
             configMenu.AddKeybind(
                 mod: this.ModManifest,
-                name: () => "Open Monster Eradication Goals Key",
-                tooltip: () => "Opens the Monster Eradication Goals menu. Default: F7",
+                name: () => "Клавіша відкриття "Цілі знищення монстрів"",
+                tooltip: () => "Клавіша відкриття "Цілі знищення монстрів" Зам.: F7",
                 getValue: () => this.Config.ActivateKey,
                 setValue: value => this.Config.ActivateKey = value
             );
