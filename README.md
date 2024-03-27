@@ -1,19 +1,23 @@
 # Stardew Valley Mods
 
 ## [Special Orders Anywhere](https://www.nexusmods.com/stardewvalley/mods/7588)
+
 Quickly cycle through varies menus. Access your Calendar, Daily Quests, Special Orders, Qi's Special Orders, and Journal anywhere.
 
 ### Install
+
 - Install the latest version of SMAPI.
-- Download the zip from the latest [release](https://github.com/AcidicNic/StardewValleyMods/releases/tag/latest) page or [NexusMods](https://www.nexusmods.com/stardewvalley/mods/7588).
+- Download the zip from [NexusMods](https://www.nexusmods.com/stardewvalley/mods/7588).
 - Extract the zip file into your Mods folder.
-    - You can find the Mods folder using steam by right clicking Stardew Valley, then clicking Properties > Local Files > Browse
+  - You can find the Mods folder using steam by right clicking Stardew Valley, then clicking Properties > Local Files > Browse
 
 ### Generic Mod Config Menu (Recommended)
+
 1. Install the [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098) mod from NexusMods.
 2. You can edit settings from the title screen ([via the cog button](https://github.com/spacechase0/StardewValleyMods/blob/develop/GenericModConfigMenu/docs/screenshot-title.png)) or in-game ([at the bottom of the in-game options menu](https://github.com/spacechase0/StardewValleyMods/blob/develop/GenericModConfigMenu/docs/screenshot-in-game-options.png)).
 
 ### Manual Config
+
 Here's a [list of valid options](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings) for the hotkey options, for your keyboard or controller.
 
 | Config Variables | Valid Inputs | Description |
@@ -26,18 +30,36 @@ Here's a [list of valid options](https://stardewcommunitywiki.com/Modding:Player
 
 ---
 
-## Pelican Fiber
-This is just an updated version of the original Pelican Fiber mod created by PathosChild. I loved this mod a few years back when it was being maintained, so I decided to try updating it! I didn't have to change much, I just made it work on 1.5. I might try adding the new Ginger Island shops to the menu, not sure yet.
- - [Original Github Repo](https://github.com/jdusbabek/stardewvalley)
- - [Original NexusMods Listing](https://www.nexusmods.com/stardewvalley/mods/631)
+## [Monster Slayer Anywhere](https://www.nexusmods.com/stardewvalley/mods/21162)
+
+View your Monster Eradication Goal List anywhere (Default KeyBind: F7)
 
 ### Install
+
 - Install the latest version of SMAPI.
-- Download the zip from the latest [release](https://github.com/AcidicNic/StardewValleyMods/releases/tag/latest) page.
+- Download the latest version from [NexusMods](https://www.nexusmods.com/stardewvalley/mods/21162).
 - Extract the zip file into your Mods folder.
-    - You can find the Mods folder using steam by right clicking Stardew Valley, then clicking Properties > Local Files > Browse
+  - You can find the Mods folder using steam by right clicking Stardew Valley, then clicking Properties > Local Files > Browse
 
-### Config
-Here's a [list of valid options](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings) for the `KeyBind` config var.
+### Generic Mod Config Menu (Recommended)
 
-I haven't changed any config settings, so check out [the configuration section on the original NexusMods page](https://www.nexusmods.com/stardewvalley/mods/631?tab=description).
+1. Install the [Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098) mod from NexusMods.
+2. You can edit settings from the title screen ([via the cog button](https://github.com/spacechase0/StardewValleyMods/blob/develop/GenericModConfigMenu/docs/screenshot-title.png)) or in-game ([at the bottom of the in-game options menu](https://github.com/spacechase0/StardewValleyMods/blob/develop/GenericModConfigMenu/docs/screenshot-in-game-options.png)).
+
+### Manual Config
+
+A config file called `config.json` will generate inside of `StardewValley/Mods/MonsterSlayerAnywhere/` after installing the mod and running the game once. Open `config.json` and change `ActivateKey` to your desired key.
+
+Here's a [list of valid options](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings) for the hotkey.
+
+| Config Variables | Valid Inputs | Description |
+|---|:---:|---|
+|`ActivateKey`|[Any key/button listed here](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings)|(Default: `F7`) Opens the Monster Eradication Goal List.|
+
+### ChangeLog
+
+1.0.0
+
+- Added a hotkey that opens the monster eradication goal list.
+
++ Generic Mod Config Menu is supported.
