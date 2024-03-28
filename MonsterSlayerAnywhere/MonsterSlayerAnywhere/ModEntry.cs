@@ -16,10 +16,10 @@ namespace acidicNic.MonsterSlayerAnywhere {
             this.Config = helper.ReadConfig<ModConfig>();
 
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+            helper.Events.Input.ButtonsChanged += this.OnButtonsChanged;
         }
 
-        private void OnGameLaunched(object sender, GameLaunchedEventArgs e) {
+        private void OnGameLaunched(object? sender, GameLaunchedEventArgs e) {
             // get Generic Mod Config Menu's API (if it's installed)
             var configMenu = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
             if (configMenu is null)
@@ -38,25 +38,21 @@ namespace acidicNic.MonsterSlayerAnywhere {
                 text: () => "KeyBind Settings"
             );
             // activate key config
-            configMenu.AddKeybind(
+            configMenu.AddKeybindList(
                 mod: this.ModManifest,
-                name: () => "Open Monster Eradication Goals Key",
+                name: () => "Toggle Monster List",
                 tooltip: () => "Opens the Monster Eradication Goals menu. Default: F7",
-                getValue: () => this.Config.ActivateKey,
-                setValue: value => this.Config.ActivateKey = value
+                getValue: () => this.Config.ToggleMonsterList,
+                setValue: value => this.Config.ToggleMonsterList = value
             );
         }
 
-        private void OnButtonPressed(object sender, ButtonPressedEventArgs e) {
-            if (e.Button != this.Config.ActivateKey || !Context.IsPlayerFree)
+        private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e) {
+            if (!this.Config.ToggleMonsterList.JustPressed() || !Context.IsPlayerFree)
                 return;
 
             if (Game1.getLocationFromName("AdventureGuild") is AdventureGuild advGuild)
                 advGuild.showMonsterKillList();
-            
-
-            // print button presses to the console window
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
         }
     }
 }

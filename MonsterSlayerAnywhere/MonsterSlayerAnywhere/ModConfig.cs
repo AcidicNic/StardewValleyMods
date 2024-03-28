@@ -1,8 +1,9 @@
 ﻿using StardewModdingAPI;
+using StardewModdingAPI.Utilities;
 
 namespace acidicNic.MonsterSlayerAnywhere {
     public class ModConfig {
 
-        public SButton ActivateKey { get; set; } = SButton.F7;
+        public KeybindList ToggleMonsterList { get; set; } = new (SButton.F7);
     }
 }
