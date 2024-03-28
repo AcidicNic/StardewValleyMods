@@ -5,6 +5,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Locations;
+using StardewValley.Menus;
 
 namespace acidicNic.MonsterSlayerAnywhere {
 
@@ -48,11 +49,21 @@ namespace acidicNic.MonsterSlayerAnywhere {
         }
 
         private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e) {
-            if (!this.Config.ToggleMonsterList.JustPressed() || !Context.IsPlayerFree)
+            if (!Context.IsWorldReady || !this.Config.ToggleMonsterList.JustPressed())
                 return;
 
-            if (Game1.getLocationFromName("AdventureGuild") is AdventureGuild advGuild)
-                advGuild.showMonsterKillList();
+            // Open the Monster Eradication Goals list
+            if (Context.IsPlayerFree) {
+                ((AdventureGuild)Game1.getLocationFromName("AdventureGuild")).showMonsterKillList();
+                return;
+            }
+
+            // Close the Monster Eradication Goals list
+            if (Game1.activeClickableMenu is LetterViewerMenu letterMenu) {
+                if (!letterMenu.isMail && !letterMenu.isFromCollection)
+                    letterMenu.exitThisMenu();
+            }
         }
+
     }
 }

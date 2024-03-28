@@ -1,7 +1,7 @@
 {
   "Name": "MonsterSlayerAnywhere",
   "Author": "AcidicNic",
-  "Version": "1.0.1",
+  "Version": "1.1.0",
   "Description": "View your monster eradication goal list anywhere.",
   "UniqueID": "acidicNic.MonsterSlayerAnywhere",
   "EntryDll": "MonsterSlayerAnywhere.dll",

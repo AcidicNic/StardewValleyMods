@@ -48,13 +48,13 @@ View your Monster Eradication Goal List anywhere (Default KeyBind: F7)
 
 ### Manual Config
 
-A config file called `config.json` will generate inside of `StardewValley/Mods/MonsterSlayerAnywhere/` after installing the mod and running the game once. Open `config.json` and change `ActivateKey` to your desired key.
+A config file called `config.json` will generate inside of `StardewValley/Mods/MonsterSlayerAnywhere/` after installing the mod and running the game once. Open `config.json` and change `ToggleMonsterList` to your desired key.
 
-Here's a [list of valid options](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings) for the hotkey.
+Here's a [list of valid options](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings) for the hotkey. You can [combine keys](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Multi-key_bindings).
 
 | Config Variables | Valid Inputs | Description |
 |---|:---:|---|
-|`ActivateKey`|[Any key/button listed here](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings)|(Default: `F7`) Opens the Monster Eradication Goal List.|
+|`ToggleMonsterList`|[Any key(s)/button(s) listed here](https://stardewcommunitywiki.com/Modding:Player_Guide/Key_Bindings#Available_bindings)|(Default: `F7`) Opens the Monster Eradication Goal List.|
 
 ### ChangeLog
 
