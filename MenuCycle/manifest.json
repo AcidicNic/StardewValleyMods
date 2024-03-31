@@ -1,7 +1,7 @@
 {
   "Name": "Menu Cycle",
   "Author": "AcidicNic",
-  "Version": "3.1.0",
+  "Version": "4.0.1",
   "Description": "Quickly cycle through varies menus. Access the Calendar, Daily Quests, Special Orders, and Qi's Special Orders anywhere. (Previously, \"Special Orders Anywhere\")",
   "UniqueID": "acidicNic.SpecialOrdersAnywhere",
   "EntryDll": "MenuCycle.dll",

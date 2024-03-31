@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 using GenericModConfigMenu;
 using Microsoft.Xna.Framework;
 using StardewModdingAPI;
@@ -7,7 +8,7 @@ using StardewValley;
 using StardewValley.Locations;
 using StardewValley.Menus;
 
-namespace acidicNic.MonsterSlayerAnywhere {
+namespace AcdicNic.Stardew.MonsterSlayerAnywhere {
 
     internal sealed class ModEntry : Mod {
 

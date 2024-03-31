@@ -1,7 +1,7 @@
 ﻿using StardewModdingAPI;
 using StardewModdingAPI.Utilities;
 
-namespace AcidicNic.MenuCycle.Framework
+namespace AcdicNic.Stardew.MenuCycle.Framework
 {
     public class ModConfig
     {

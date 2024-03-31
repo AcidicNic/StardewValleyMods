@@ -4,8 +4,9 @@ using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Menus;
 using StardewValley.SpecialOrders;
+using System.IO;
 
-namespace AcidicNic.MenuCycle
+namespace AcdicNic.Stardew.MenuCycle
 {
 
     public class ModEntry : Mod
@@ -17,6 +18,8 @@ namespace AcidicNic.MenuCycle
         public override void Entry(IModHelper helper)
         {
             this.Config = helper.ReadConfig<ModConfig>();
+
+            DeleteTranslationDirectory(helper.DirectoryPath);
 
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
             helper.Events.Input.ButtonsChanged += this.OnButtonsChanged;
@@ -213,7 +216,7 @@ namespace AcidicNic.MenuCycle
             else if (menu == "JOURNAL")
                 Game1.activeClickableMenu = new QuestLog();
             else
-                this.Monitor.Log($"MenuCycle: Error opening menu: {menu}", LogLevel.Error);
+                this.Monitor.Log($"Failed to open menu: {menu}", LogLevel.Error);
         }
 
         // Helper method - get string value of the current active menu
@@ -227,6 +230,17 @@ namespace AcidicNic.MenuCycle
                 return specialOrders.boardType == "Qi" ? "QI_SPECIAL_ORDERS" : "SPECIAL_ORDERS";
 
             return "";
+        }
+
+        public void DeleteTranslationDirectory(string modDir)
+        {
+            string translationDir = Path.Combine(modDir, "i18n");
+
+            if (Directory.Exists(translationDir))
+            {
+                this.Monitor.Log($"Deleting MenuCycle/i18n/ ...", LogLevel.Info);
+                Directory.Delete(translationDir, recursive: true);
+            }
         }
     }
 }
